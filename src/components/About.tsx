@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useMediaQuery } from "react-responsive";
-
+import profilePhoto from "../public/profilePhoto.jpg";
 const About = () => {
   const isMobile = useMediaQuery({ maxWidth: 640 });
 
@@ -36,7 +36,8 @@ const About = () => {
         <div className="rounded-full w-40 h-40 overflow-hidden mb-5">
           <motion.img
             whileTap={{ scale: 1.2 }}
-            src="https://media.licdn.com/dms/image/v2/D4D03AQHp2gBdCQ1Mww/profile-displayphoto-shrink_400_400/B4DZR48AeCG4Ag-/0/1737195785721?e=1756339200&v=beta&t=_TxsYp08lJrvbrn_CCJWc9ksVwNqXAvrBQlbm_x4b6E"
+            alt=""
+            src={profilePhoto}
             className="object-cover"
           />
         </div>

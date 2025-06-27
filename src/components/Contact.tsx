@@ -10,6 +10,7 @@ const Contact = () => {
     <div className="relative overflow-hidden" id="contact">
       <img
         id="contact"
+        alt="bg"
         className="h-[20vh] md:h-[50vh] w-[120vw] object-cover"
         src={natureBG}
       />

@@ -15,6 +15,7 @@ const MobileView = () => {
       <IoMdMenu size={40} className="fixed right-0 text-gray-200 z-10 m-2" />
       <div className="h-screen relative">
         <img
+          alt="bg"
           src={HomePageBG}
           className="absolute w-full h-full inset-0 object-cover"
         />
@@ -27,8 +28,9 @@ const MobileView = () => {
       <Project />
       <img
         src={laptopBG}
+        alt="bg"
         loading="lazy"
-        className="fixed inset-0 h-[100vh] -z-10 object-cover "
+        className="fixed inset-0 h-[100vh] w-auto -z-10 object-cover "
       />
       <Resume />
       <Contact />

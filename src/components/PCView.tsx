@@ -23,6 +23,7 @@ const PCView = () => {
       >
         <img
           src={laptopBG}
+          alt="bg"
           loading="lazy"
           className="fixed h-[120vh] w-[120vw] -z-10 object-cover "
         />
