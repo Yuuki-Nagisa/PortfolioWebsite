@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useMediaQuery } from "react-responsive";
-import profilePhoto from "../public/profilePhoto.jpg";
+import profilePhoto from "../public/profilePhoto.webp";
 const About = () => {
   const isMobile = useMediaQuery({ maxWidth: 640 });
 
@@ -38,7 +38,7 @@ const About = () => {
             whileTap={{ scale: 1.2 }}
             alt=""
             src={profilePhoto}
-            className="object-cover"
+            className="object-cover w-full h-full"
           />
         </div>
         <p className="w-[95%] md:w-[60%] mb-2 text-center font-semibold">
