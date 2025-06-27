@@ -2,8 +2,8 @@ import About from "./About";
 import Contact from "./Contact";
 import Experience from "./Experience";
 import Footer from "./Footer";
-import laptopBG from "../public/laptop.jpg";
-import HomePageBG from "../public/HomepageBG.jpg";
+import laptopBG from "../public/laptop.webp";
+import HomePageBG from "../public/HomepageBG.webp";
 import Resume from "./Resume";
 import NameCenterDesign from "./NameCenterDesign";
 import { IoMdMenu } from "react-icons/io";
@@ -12,10 +12,6 @@ import Project from "./Project";
 const MobileView = () => {
   return (
     <div className="h-auto">
-      <img
-        src={laptopBG}
-        className="fixed inset-0 h-[100vh] -z-10 object-cover "
-      />
       <IoMdMenu size={40} className="fixed right-0 text-gray-200 z-10 m-2" />
       <div className="h-screen relative">
         <img
@@ -27,9 +23,14 @@ const MobileView = () => {
         </div>
       </div>
       <About />
-      <Resume />
       <Experience />
       <Project />
+      <img
+        src={laptopBG}
+        loading="lazy"
+        className="fixed inset-0 h-[100vh] -z-10 object-cover "
+      />
+      <Resume />
       <Contact />
       <Footer />
     </div>

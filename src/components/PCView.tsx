@@ -4,7 +4,7 @@ import EmojiEffect from "./EmojiEffect";
 import NameCenterDesign from "./NameCenterDesign";
 import NavBar from "./NavBar";
 import About from "./About";
-import laptopBG from "../public/laptopBG.jpg";
+import laptopBG from "../public/laptopBG.webp";
 import Contact from "./Contact";
 import Experience from "./Experience";
 import Footer from "./Footer";
@@ -23,6 +23,7 @@ const PCView = () => {
       >
         <img
           src={laptopBG}
+          loading="lazy"
           className="fixed h-[120vh] w-[120vw] -z-10 object-cover "
         />
         <div

@@ -1,6 +1,4 @@
-import { BsMailbox } from "react-icons/bs";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { GiMailbox } from "react-icons/gi";
 import { IoMdMail } from "react-icons/io";
 
 const contactData = [

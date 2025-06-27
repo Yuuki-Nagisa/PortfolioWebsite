@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
+import { useMediaQuery } from "react-responsive";
 
 const About = () => {
+  const isMobile = useMediaQuery({ maxWidth: 640 });
+
   return (
     <motion.div
       id="about"
@@ -9,14 +12,14 @@ const About = () => {
       <motion.div
         className="w-[80%] md:w-[60%] h-[95%] rounded-xl shadow-2xl bg-[#fbf6ef] flex flex-col items-center gap-5 md:gap-0"
         initial={{ scale: 1 }}
-        whileHover={{ scale: 1.1, rotate: -5, zIndex: 5 }}
+        whileHover={isMobile ? {} : { scale: 1.1, rotate: -5, zIndex: 5 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
         <div className="p-10 text-5xl  mt-2 md:mt-5 flex ">
           {"About".split("").map((ch, idx) => (
             <motion.div
               initial={{ scale: 1, color: "", fontWeight: "" }}
-              whileHover={{ scale: 1.2, color: "green", fontWeight: "bold" }}
+              whileTap={{ scale: 1.2, color: "green", fontWeight: "bold" }}
               key={idx}
             >
               {ch}
@@ -32,7 +35,7 @@ const About = () => {
 
         <div className="rounded-full w-40 h-40 overflow-hidden mb-5">
           <motion.img
-            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1.2 }}
             src="https://media.licdn.com/dms/image/v2/D4D03AQHp2gBdCQ1Mww/profile-displayphoto-shrink_400_400/B4DZR48AeCG4Ag-/0/1737195785721?e=1756339200&v=beta&t=_TxsYp08lJrvbrn_CCJWc9ksVwNqXAvrBQlbm_x4b6E"
             className="object-cover"
           />

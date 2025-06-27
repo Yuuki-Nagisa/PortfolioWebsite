@@ -1,5 +1,3 @@
-import React from "react";
-
 const NavBar = () => {
   const navButtons = ["About", "Experience", "Projects", "Contact"];
   return (

@@ -1,4 +1,4 @@
-import natureBG from "../public/natureBG.jpg";
+import natureBG from "../public/natureBG.webp";
 import { GrSend } from "react-icons/gr";
 import ButtonHighlightEffect from "./ButtonHighlightEffect";
 import { motion } from "motion/react";
@@ -25,7 +25,7 @@ const Contact = () => {
                 stiffness: 200,
               },
             }}
-            whileHover={{
+            whileTap={{
               scale: 1.3,
               transition: { duration: 1, type: "spring", stiffness: 400 },
             }}

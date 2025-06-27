@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
+import { useMediaQuery } from "react-responsive";
 
 const NameCenterDesign = () => {
+  const isMobile = useMediaQuery({ maxWidth: 640 });
   return (
     <div className="flex flex-col items-center overflow-hidden ">
       <div className="pb-4 overflow-hidden">
@@ -8,13 +10,16 @@ const NameCenterDesign = () => {
           className={`text-5xl md:text-7xl font-bold text-white font-serif flex`}
           initial={{ y: 100 }}
           animate={{ y: 0 }}
-          transition={{ delay: 1, duration: 0.2 }}
+          transition={
+            isMobile ? { delay: 2, duration: 0.5 } : { delay: 1, duration: 0.2 }
+          }
         >
           {"Dibyojit".split("").map((ch, idx) => (
             <motion.div
               key={idx}
               initial={{ scale: 1, color: "" }}
-              whileHover={{ scale: 1.1, color: "red" }}
+              whileTap={isMobile ? { scale: 1.1, color: "red" } : {}}
+              whileHover={isMobile ? {} : { scale: 1.1, color: "red" }}
             >
               {ch}
             </motion.div>
@@ -23,7 +28,8 @@ const NameCenterDesign = () => {
           {"Paul".split("").map((ch, idx) => (
             <motion.div
               initial={{ scale: 1, color: "" }}
-              whileHover={{ scale: 1.1, color: "red" }}
+              whileTap={isMobile ? { scale: 1.1, color: "red" } : {}}
+              whileHover={isMobile ? {} : { scale: 1.1, color: "red" }}
               key={idx}
             >
               {ch}
@@ -35,14 +41,18 @@ const NameCenterDesign = () => {
         className={`w-50 h-0.5 md:w-100 md:h-1 bg-white`}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: [0, 1.5, 1.5, 0] }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={
+          isMobile ? { delay: 1.5, duration: 1 } : { duration: 1, delay: 0.5 }
+        }
       />
       <div className="overflow-hidden pt-4">
         <motion.div
           className={`text-lg md:text-2xl font-semibold text-white uppercase`}
           initial={{ y: -100 }}
           animate={{ y: 0 }}
-          transition={{ delay: 1, duration: 0.2 }}
+          transition={
+            isMobile ? { delay: 2, duration: 0.5 } : { delay: 1, duration: 0.2 }
+          }
         >
           java full stack developer
         </motion.div>
