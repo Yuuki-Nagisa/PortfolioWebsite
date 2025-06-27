@@ -11,7 +11,7 @@ const ButtonHighlightEffect = ({ children }: { children: ReactNode }) => {
     <motion.div
       onHoverStart={() => setIsHover(true)}
       onHoverEnd={() => setIsHover(false)}
-      className=" relative w-40 border-b-2 "
+      className=" relative w-40 border-b-2 border-white"
     >
       <motion.div
         className="h-10 w-50 bg-teal-500/30"

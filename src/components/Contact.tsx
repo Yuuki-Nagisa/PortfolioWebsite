@@ -46,14 +46,17 @@ const Contact = () => {
                   }
             }
           >
-            <GrSend size={isMobile ? 50 : 100} className="rotate-30 " />
+            <GrSend
+              size={isMobile ? 50 : 100}
+              className="rotate-30 text-white"
+            />
           </motion.div>
         </div>
         <ButtonHighlightEffect>
           <a
             href="mailto:paul.dibyojit2005@gmail.com"
             target="_blank"
-            className="h-full w-full font-bold"
+            className="h-full w-full font-bold text-white"
           >
             Contact Me
           </a>
