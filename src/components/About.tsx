@@ -19,7 +19,11 @@ const About = () => {
           {"About".split("").map((ch, idx) => (
             <motion.div
               initial={{ scale: 1, color: "", fontWeight: "" }}
-              whileTap={{ scale: 1.2, color: "green", fontWeight: "bold" }}
+              whileHover={
+                isMobile
+                  ? {}
+                  : { scale: 1.2, color: "green", fontWeight: "bold" }
+              }
               key={idx}
             >
               {ch}
@@ -35,7 +39,7 @@ const About = () => {
 
         <div className="rounded-full w-40 h-40 overflow-hidden mb-5">
           <motion.img
-            whileTap={{ scale: 1.2 }}
+            whileHover={isMobile ? {} : { scale: 1.2 }}
             alt=""
             src={profilePhoto}
             className="object-cover w-full h-full"

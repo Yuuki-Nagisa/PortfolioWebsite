@@ -17,19 +17,6 @@ const Contact = () => {
       <div className="absolute inset-0 h-full w-full  bg-black/50 flex flex-col justify-center items-center">
         <div className="flex items-center justify-center ">
           <motion.div
-            whileInView={{
-              scale: 1,
-              transition: {
-                delay: 0.3,
-                duration: 0.5,
-                type: "spring",
-                stiffness: 200,
-              },
-            }}
-            whileTap={{
-              scale: 1.3,
-              transition: { duration: 1, type: "spring", stiffness: 400 },
-            }}
             initial={{ y: 0, x: 0 }}
             animate={
               isMobile
@@ -44,6 +31,14 @@ const Contact = () => {
                       repeat: Infinity,
                     },
                   }
+            }
+            whileTap={
+              isMobile
+                ? {
+                    y: [0, -30],
+                    transition: { duration: 2, type: "spring", stiffness: 300 },
+                  }
+                : {}
             }
           >
             <GrSend
