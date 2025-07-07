@@ -46,7 +46,7 @@ const About = () => {
           />
         </div>
         <p className="w-[95%] md:w-[60%] mb-2 text-center font-semibold">
-          🚀 Second-Year CSE Student | Full Stack Developer I’m a passionate
+          🚀 Second-Year CSE Student | Full Stack Developer I’m passionate
         </p>
         <p className="w-[95%] md:w-[60%] mb-4 text-center">
           I'm a second-year BTech student in Computer Science and Engineering at{" "}
