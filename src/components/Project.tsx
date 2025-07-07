@@ -11,6 +11,7 @@ type Project = {
   description: string[];
   techStack: string[];
   liveLink: string | false;
+  githubLink: string | false;
   thumbnail: string;
 };
 
@@ -24,6 +25,7 @@ const projects: Project[] = [
     ],
     techStack: ["React.js", "Tailwind CSS", "Framer Motion"],
     liveLink: "https://yuuki-nagisa.github.io/PortfolioWebsite/",
+    githubLink: "https://github.com/Yuuki-Nagisa/PortfolioWebsite",
     thumbnail: thumanailPortfolio,
   },
   {
@@ -48,6 +50,7 @@ const projects: Project[] = [
       "VS Code",
     ],
     liveLink: false,
+    githubLink: false,
     thumbnail: AnalyticsManager,
   },
 ];
@@ -165,7 +168,11 @@ const Projects = () => {
                 )}
                 <button
                   className="flex items-center gap-2 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded transition"
-                  disabled
+                  onClick={() =>
+                    (window.location.href = selectedProject.githubLink
+                      ? selectedProject.githubLink
+                      : "")
+                  }
                 >
                   <FaGithub /> Code
                 </button>
