@@ -8,7 +8,6 @@ import {
   FaUserFriends,
 } from "react-icons/fa";
 import { SiFrontendmentor, SiXdadevelopers } from "react-icons/si";
-import { useMediaQuery } from "react-responsive";
 
 const skills = [
   {
@@ -89,10 +88,11 @@ const skills = [
 ];
 
 const Experience = () => {
-  const isMobile = useMediaQuery({ maxWidth: 640 });
-
   return (
-    <section id="experience" className="py-20 px-6 bg-gray-900 text-white">
+    <section
+      id="experience"
+      className="py-20 px-6 bg-gray-900 text-white overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -140,7 +140,7 @@ const Experience = () => {
 
         {/* Skills Section */}
         <motion.div
-          initial={{ opacity: 0, x: isMobile ? -50 : 50 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="grid md:grid-cols-2 gap-8"

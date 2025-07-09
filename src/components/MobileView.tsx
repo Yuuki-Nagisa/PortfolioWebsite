@@ -8,11 +8,21 @@ import Resume from "./Resume";
 import NameCenterDesign from "./NameCenterDesign";
 import { IoMdMenu } from "react-icons/io";
 import Project from "./Project";
+import DropdownMenu from "./DropdownMenu";
+import { ContextProvider, useDropDownStatus } from "../DropdownState";
 
 const MobileView = () => {
+  const { isOpen, updateIsOpen } = useDropDownStatus();
+
   return (
     <div className="h-auto">
-      <IoMdMenu size={40} className="fixed right-0 text-gray-200 z-10 m-2" />
+      {" "}
+      <IoMdMenu
+        onClick={updateIsOpen}
+        size={40}
+        className="fixed right-0 text-gray-200 z-5 m-2"
+      />
+      {isOpen && <DropdownMenu />}
       <div className="h-screen relative">
         <img
           alt="bg"
