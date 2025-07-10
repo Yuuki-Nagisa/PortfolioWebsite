@@ -4,7 +4,7 @@ import MobileView from "./components/MobileView";
 import { ContextProvider } from "./DropdownState";
 
 const App = () => {
-  const isMobile = useMediaQuery({ maxWidth: 640 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   if (isMobile)
     return (
       <ContextProvider>

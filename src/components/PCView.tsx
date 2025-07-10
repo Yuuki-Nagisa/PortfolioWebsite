@@ -12,9 +12,6 @@ import Resume from "./Resume";
 import Project from "./Project";
 
 const PCView = () => {
-  const { scrollYProgress } = useScroll();
-  const navColor = useTransform(scrollYProgress, [0.05, 0.1], [0, 1]);
-
   return (
     <div className="h-auto">
       <div
@@ -42,10 +39,6 @@ const PCView = () => {
       <Project />
       <Contact />
       <Footer />
-      <motion.div
-        className="fixed inset-0 inset-0 w-[100wh] h-[10vh] bg-black z-10"
-        style={{ opacity: navColor }}
-      />
       <NavBar />
     </div>
   );

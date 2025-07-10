@@ -1,8 +1,19 @@
+import { motion, useScroll, useTransform } from "motion/react";
+
 const NavBar = () => {
   const navButtons = ["About", "Experience", "Projects", "Contact"];
+  const { scrollYProgress } = useScroll();
+  const navColor = useTransform(
+    scrollYProgress,
+    [0.05, 0.1],
+    ["rgba(0, 0, 0, 0)", "#000000"]
+  );
   return (
-    <div className="fixed inset-0 w-[100wh] h-[10vh] p-5 z-10">
-      <div className="flex justify-between items-center ">
+    <div className="fixed inset-0 z-10">
+      <motion.div
+        className="flex justify-between items-center p-2"
+        style={{ backgroundColor: navColor }}
+      >
         <div className="ml-[5%] flex items-center justify-center">
           <button
             onClick={() =>
@@ -30,7 +41,7 @@ const NavBar = () => {
             </button>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

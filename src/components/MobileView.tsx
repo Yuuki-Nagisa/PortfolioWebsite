@@ -9,26 +9,51 @@ import NameCenterDesign from "./NameCenterDesign";
 import { IoMdMenu } from "react-icons/io";
 import Project from "./Project";
 import DropdownMenu from "./DropdownMenu";
-import { ContextProvider, useDropDownStatus } from "../DropdownState";
+import { useDropDownStatus } from "../DropdownState";
+import { CgClose } from "react-icons/cg";
+import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 
 const MobileView = () => {
   const { isOpen, updateIsOpen } = useDropDownStatus();
-
+  const refBG = useRef(null);
+  const { scrollY } = useScroll({ target: refBG });
+  const scaleBG = useTransform(scrollY, [0, 1000], [1, 5]);
   return (
-    <div className="h-auto">
+    <div className="h-auto ">
       {" "}
       <IoMdMenu
         onClick={updateIsOpen}
         size={40}
-        className="fixed right-0 text-gray-200 z-5 m-2"
+        className="fixed right-0 text-gray-200 bg-[#FF5F1F] rounded-lg z-10 p-1 m-2"
       />
-      {isOpen && <DropdownMenu />}
-      <div className="h-screen relative">
-        <img
-          alt="bg"
-          src={HomePageBG}
-          className="absolute w-full h-full inset-0 object-cover"
-        />
+      <DropdownMenu />
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 180 }}
+            transition={{ duration: 0.5 }}
+            onClick={updateIsOpen}
+            className={`fixed right-0 text-gray-200 bg-red-500 rounded-full z-10 p-2 m-1 `}
+          >
+            <CgClose onClick={updateIsOpen} size={40} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className="h-screen relative overflow-hidden" id="home" ref={refBG}>
+        <motion.div
+          style={{
+            scale: scaleBG,
+          }}
+          className="absolute w-full h-full inset-0"
+        >
+          <img
+            alt="bg"
+            src={HomePageBG}
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
         <div className="absolute inset-0 w-full h-full bg-black/20 flex flex-col justify-center">
           <NameCenterDesign />
         </div>
