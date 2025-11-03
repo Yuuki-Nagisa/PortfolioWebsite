@@ -9,9 +9,9 @@ const NavBar = () => {
     ["rgba(0, 0, 0, 0)", "#000000"]
   );
   return (
-    <div className="fixed inset-0 z-10">
+    <div className="fixed inset-0 h-0 z-10">
       <motion.div
-        className="flex justify-between items-center p-2"
+        className="flex justify-between items-center p-2 "
         style={{ backgroundColor: navColor }}
       >
         <div className="ml-[5%] flex items-center justify-center">

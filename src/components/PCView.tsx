@@ -1,5 +1,3 @@
-import { motion, useScroll, useTransform } from "motion/react";
-
 import EmojiEffect from "./EmojiEffect";
 import NameCenterDesign from "./NameCenterDesign";
 import NavBar from "./NavBar";
