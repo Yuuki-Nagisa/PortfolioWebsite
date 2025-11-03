@@ -9,7 +9,7 @@ import NameCenterDesign from "./NameCenterDesign";
 import { IoMdMenu } from "react-icons/io";
 import Project from "./Project";
 import DropdownMenu from "./DropdownMenu";
-import { ContextProvider, useDropDownStatus } from "../DropdownState";
+import { useDropDownStatus } from "../DropdownState";
 
 const MobileView = () => {
   const { isOpen, updateIsOpen } = useDropDownStatus();
