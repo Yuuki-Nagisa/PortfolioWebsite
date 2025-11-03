@@ -10,12 +10,9 @@ import { IoMdMenu } from "react-icons/io";
 import Project from "./Project";
 import DropdownMenu from "./DropdownMenu";
 import { useDropDownStatus } from "../DropdownState";
-<<<<<<< HEAD
 import { CgClose } from "react-icons/cg";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-=======
->>>>>>> 77b23bc150422259e40a5bcb6eb4b45889f69e05
 
 const MobileView = () => {
   const { isOpen, updateIsOpen } = useDropDownStatus();
